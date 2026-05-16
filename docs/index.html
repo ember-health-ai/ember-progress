@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ember Health AI — Build Progress</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8f9fa;
+      color: #212529;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 760px; margin: 0 auto; }
+    header { margin-bottom: 2rem; }
+    header h1 { font-size: 1.6rem; font-weight: 700; color: #1a1a2e; }
+    header p { color: #6c757d; margin-top: 0.35rem; font-size: 0.95rem; }
+    .progress-bar-wrap {
+      background: #e9ecef;
+      border-radius: 8px;
+      height: 10px;
+      margin: 1.25rem 0 0.4rem;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #e76f51, #f4a261);
+      transition: width 0.4s ease;
+    }
+    .progress-label { font-size: 0.85rem; color: #6c757d; margin-bottom: 2rem; }
+    .phase-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .phase {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .phase.complete { border-left: 4px solid #2a9d8f; }
+    .phase.in-progress { border-left: 4px solid #f4a261; }
+    .phase.not-started { border-left: 4px solid #dee2e6; }
+    .phase.post-mvp { border-left: 4px solid #adb5bd; opacity: 0.7; }
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .badge-complete   { background: #d1f0ec; color: #1b7a6e; }
+    .badge-progress   { background: #fde8d8; color: #b5541a; }
+    .badge-waiting    { background: #e9ecef; color: #495057; }
+    .badge-postmvp    { background: #e9ecef; color: #868e96; }
+    .phase-info { flex: 1; }
+    .phase-name { font-weight: 600; font-size: 0.95rem; }
+    .phase-date { font-size: 0.8rem; color: #6c757d; margin-top: 0.15rem; }
+    .phase-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #adb5bd;
+      width: 2rem;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    footer { margin-top: 2.5rem; font-size: 0.8rem; color: #adb5bd; text-align: center; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Ember Health AI — Build Progress</h1>
+    <p>GBM Companion Chatbot on AWS &mdash; MVP build tracker</p>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" style="width: 14%"></div>
+    </div>
+    <div class="progress-label">1 of 7 MVP phases complete</div>
+  </header>
+
+  <ul class="phase-list">
+
+    <li class="phase complete">
+      <span class="phase-num">0</span>
+      <div class="phase-info">
+        <div class="phase-name">Repo &amp; IaC Scaffold</div>
+        <div class="phase-date">Completed 2026-05-16</div>
+      </div>
+      <span class="badge badge-complete">&#10003; Complete</span>
+    </li>
+
+    <li class="phase not-started">
+      <span class="phase-num">1</span>
+      <div class="phase-info">
+        <div class="phase-name">AWS Foundations</div>
+        <div class="phase-date">Encryption, storage, access roles</div>
+      </div>
+      <span class="badge badge-waiting">Not started</span>
+    </li>
+
+    <li class="phase not-started">
+      <span class="phase-num">2</span>
+      <div class="phase-info">
+        <div class="phase-name">Knowledge Base &amp; RAG</div>
+        <div class="phase-date">GBM document indexing + semantic search</div>
+      </div>
+      <span class="badge badge-waiting">Not started</span>
+    </li>
+
+    <li class="phase not-started">
+      <span class="phase-num">3</span>
+      <div class="phase-info">
+        <div class="phase-name">Chat API</div>
+        <div class="phase-date">Serverless handler + REST endpoint</div>
+      </div>
+      <span class="badge badge-waiting">Not started</span>
+    </li>
+
+    <li class="phase not-started">
+      <span class="phase-num">4</span>
+      <div class="phase-info">
+        <div class="phase-name">Auth Wiring</div>
+        <div class="phase-date">User pool, login flow, token validation</div>
+      </div>
+      <span class="badge badge-waiting">Not started</span>
+    </li>
+
+    <li class="phase not-started">
+      <span class="phase-num">5</span>
+      <div class="phase-info">
+        <div class="phase-name">Frontend</div>
+        <div class="phase-date">React chat UI, hosted + CI/CD wired</div>
+      </div>
+      <span class="badge badge-waiting">Not started</span>
+    </li>
+
+    <li class="phase not-started">
+      <span class="phase-num">6</span>
+      <div class="phase-info">
+        <div class="phase-name">Domain &amp; TLS</div>
+        <div class="phase-date">chat.emberhealth.ai goes live</div>
+      </div>
+      <span class="badge badge-waiting">Not started</span>
+    </li>
+
+    <li class="phase post-mvp">
+      <span class="phase-num">7–14</span>
+      <div class="phase-info">
+        <div class="phase-name">Post-MVP Platform</div>
+        <div class="phase-date">Session memory, signal pipeline, trials, multi-tenancy, voice, GDPR</div>
+      </div>
+      <span class="badge badge-postmvp">Post-MVP</span>
+    </li>
+
+  </ul>
+
+  <footer>Last updated 2026-05-16 &mdash; ember-health-ai</footer>
+</div>
+</body>
+</html>
