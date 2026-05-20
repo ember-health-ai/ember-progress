@@ -67,6 +67,32 @@
       text-align: right;
       flex-shrink: 0;
     }
+    .tier-section {
+      margin-bottom: 1.25rem;
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .tier-summary {
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 0.75rem 1rem;
+      user-select: none;
+      list-style: none;
+    }
+    .tier-summary::-webkit-details-marker { display: none; }
+    .tier-summary::before {
+      content: "▶ ";
+      font-size: 0.65rem;
+      vertical-align: middle;
+      margin-right: 0.25rem;
+    }
+    details[open] > .tier-summary::before { content: "▼ "; }
+    .tier-t1 > .tier-summary { color: #2a9d8f; background: #f0faf9; }
+    .tier-t2 > .tier-summary { color: #c47a2a; background: #fef7f0; }
+    .tier-t3 > .tier-summary { color: #868e96; background: #f8f9fa; }
+    .tier-body { padding: 0.75rem 1rem 1rem; }
     footer { margin-top: 2.5rem; font-size: 0.8rem; color: #adb5bd; text-align: center; }
   </style>
 </head>
@@ -81,90 +107,185 @@
     <div class="progress-label">5 of 7 Prototype phases complete</div>
   </header>
 
-  <ul class="phase-list">
+  <details class="tier-section tier-t1" open>
+    <summary class="tier-summary">Tier 1 &mdash; Prototype &nbsp; [5 of 7 complete]</summary>
+    <div class="tier-body">
+      <ul class="phase-list">
 
-    <li class="phase complete">
-      <span class="phase-num">0</span>
-      <div class="phase-info">
-        <div class="phase-name">Repo &amp; IaC Scaffold</div>
-        <div class="phase-date">Completed 2026-05-16</div>
-      </div>
-      <span class="badge badge-complete">&#10003; Complete</span>
-    </li>
+        <li class="phase not-started">
+          <span class="phase-num">Pre</span>
+          <div class="phase-info">
+            <div class="phase-name">Account &amp; Tool Setup</div>
+            <div class="phase-date">Account + tool setup</div>
+          </div>
+          <span class="badge badge-waiting">Not started</span>
+        </li>
 
-    <li class="phase complete">
-      <span class="phase-num">1</span>
-      <div class="phase-info">
-        <div class="phase-name">AWS Foundations</div>
-        <div class="phase-date">Completed 2026-05-18</div>
-      </div>
-      <span class="badge badge-complete">&#10003; Complete</span>
-    </li>
+        <li class="phase complete">
+          <span class="phase-num">0</span>
+          <div class="phase-info">
+            <div class="phase-name">Repo &amp; IaC Scaffold</div>
+            <div class="phase-date">Completed 2026-05-16</div>
+          </div>
+          <span class="badge badge-complete">&#10003; Complete</span>
+        </li>
 
-    <li class="phase complete">
-      <span class="phase-num">2</span>
-      <div class="phase-info">
-        <div class="phase-name">Knowledge Base &amp; RAG</div>
-        <div class="phase-date">Completed 2026-05-18</div>
-      </div>
-      <span class="badge badge-complete">&#10003; Complete</span>
-    </li>
+        <li class="phase complete">
+          <span class="phase-num">1</span>
+          <div class="phase-info">
+            <div class="phase-name">AWS Foundations</div>
+            <div class="phase-date">Completed 2026-05-18</div>
+          </div>
+          <span class="badge badge-complete">&#10003; Complete</span>
+        </li>
 
-    <li class="phase complete">
-      <span class="phase-num">3a</span>
-      <div class="phase-info">
-        <div class="phase-name">Chat API</div>
-        <div class="phase-date">Completed 2026-05-19</div>
-      </div>
-      <span class="badge badge-complete">&#10003; Complete</span>
-    </li>
+        <li class="phase complete">
+          <span class="phase-num">2</span>
+          <div class="phase-info">
+            <div class="phase-name">Knowledge Base &amp; RAG</div>
+            <div class="phase-date">Completed 2026-05-18</div>
+          </div>
+          <span class="badge badge-complete">&#10003; Complete</span>
+        </li>
 
-    <li class="phase not-started">
-      <span class="phase-num">3b</span>
-      <div class="phase-info">
-        <div class="phase-name">Third-Party AI Integration</div>
-        <div class="phase-date">BAA-gated &mdash; pending partner agreement</div>
-      </div>
-      <span class="badge badge-waiting">Not started</span>
-    </li>
+        <li class="phase complete">
+          <span class="phase-num">3a</span>
+          <div class="phase-info">
+            <div class="phase-name">Chat API</div>
+            <div class="phase-date">Completed 2026-05-19</div>
+          </div>
+          <span class="badge badge-complete">&#10003; Complete</span>
+        </li>
 
-    <li class="phase complete">
-      <span class="phase-num">4</span>
-      <div class="phase-info">
-        <div class="phase-name">Auth Wiring</div>
-        <div class="phase-date">Completed 2026-05-19</div>
-      </div>
-      <span class="badge badge-complete">&#10003; Complete</span>
-    </li>
+        <li class="phase complete">
+          <span class="phase-num">4</span>
+          <div class="phase-info">
+            <div class="phase-name">Auth Wiring</div>
+            <div class="phase-date">Completed 2026-05-19</div>
+          </div>
+          <span class="badge badge-complete">&#10003; Complete</span>
+        </li>
 
-    <li class="phase not-started">
-      <span class="phase-num">5</span>
-      <div class="phase-info">
-        <div class="phase-name">Frontend</div>
-        <div class="phase-date">React chat UI, hosted + CI/CD wired</div>
-      </div>
-      <span class="badge badge-waiting">Not started</span>
-    </li>
+        <li class="phase not-started">
+          <span class="phase-num">5</span>
+          <div class="phase-info">
+            <div class="phase-name">Frontend</div>
+            <div class="phase-date">React chat UI, hosted + CI/CD wired</div>
+          </div>
+          <span class="badge badge-waiting">Not started</span>
+        </li>
 
-    <li class="phase not-started">
-      <span class="phase-num">6</span>
-      <div class="phase-info">
-        <div class="phase-name">Domain &amp; TLS</div>
-        <div class="phase-date">chat.emberhealth.ai goes live</div>
-      </div>
-      <span class="badge badge-waiting">Not started</span>
-    </li>
+      </ul>
+    </div>
+  </details>
 
-    <li class="phase post-mvp">
-      <span class="phase-num">7–14</span>
-      <div class="phase-info">
-        <div class="phase-name">Post-MVP Platform</div>
-        <div class="phase-date">Session memory, signal pipeline, trials, multi-tenancy, voice, GDPR</div>
-      </div>
-      <span class="badge badge-postmvp">Post-MVP</span>
-    </li>
+  <details class="tier-section tier-t2">
+    <summary class="tier-summary">Tier 2 &mdash; MVP &nbsp; [0 of 5 complete]</summary>
+    <div class="tier-body">
+      <ul class="phase-list">
 
-  </ul>
+        <li class="phase not-started">
+          <span class="phase-num">3b</span>
+          <div class="phase-info">
+            <div class="phase-name">Ancora Tool</div>
+            <div class="phase-date">BAA-gated &mdash; pending partner agreement</div>
+          </div>
+          <span class="badge badge-waiting">Not started</span>
+        </li>
+
+        <li class="phase not-started">
+          <span class="phase-num">7</span>
+          <div class="phase-info">
+            <div class="phase-name">Session Memory</div>
+            <div class="phase-date">DynamoDB-backed conversation history</div>
+          </div>
+          <span class="badge badge-waiting">Not started</span>
+        </li>
+
+        <li class="phase not-started">
+          <span class="phase-num">8</span>
+          <div class="phase-info">
+            <div class="phase-name">Raw Log Capture</div>
+            <div class="phase-date">Full interaction logging pipeline</div>
+          </div>
+          <span class="badge badge-waiting">Not started</span>
+        </li>
+
+        <li class="phase not-started">
+          <span class="phase-num">9</span>
+          <div class="phase-info">
+            <div class="phase-name">Web Search Tool</div>
+            <div class="phase-date">BAA-gated &mdash; pending partner agreement</div>
+          </div>
+          <span class="badge badge-waiting">Not started</span>
+        </li>
+
+        <li class="phase not-started">
+          <span class="phase-num">10</span>
+          <div class="phase-info">
+            <div class="phase-name">Production Domain + Backend WAF</div>
+            <div class="phase-date">T2 ship gate &mdash; public endpoint hardened</div>
+          </div>
+          <span class="badge badge-waiting">Not started</span>
+        </li>
+
+      </ul>
+    </div>
+  </details>
+
+  <details class="tier-section tier-t3">
+    <summary class="tier-summary">Tier 3 &mdash; Post-MVP Platform</summary>
+    <div class="tier-body">
+      <ul class="phase-list">
+
+        <li class="phase post-mvp">
+          <span class="phase-num">11</span>
+          <div class="phase-info">
+            <div class="phase-name">Ember Signal Pipeline</div>
+            <div class="phase-date">Post-MVP</div>
+          </div>
+          <span class="badge badge-postmvp">Post-MVP</span>
+        </li>
+
+        <li class="phase post-mvp">
+          <span class="phase-num">12</span>
+          <div class="phase-info">
+            <div class="phase-name">Multi-Tenancy</div>
+            <div class="phase-date">Post-MVP</div>
+          </div>
+          <span class="badge badge-postmvp">Post-MVP</span>
+        </li>
+
+        <li class="phase post-mvp">
+          <span class="phase-num">13</span>
+          <div class="phase-info">
+            <div class="phase-name">Voice Input</div>
+            <div class="phase-date">Post-MVP</div>
+          </div>
+          <span class="badge badge-postmvp">Post-MVP</span>
+        </li>
+
+        <li class="phase post-mvp">
+          <span class="phase-num">14</span>
+          <div class="phase-info">
+            <div class="phase-name">File Attachments + Textract</div>
+            <div class="phase-date">Post-MVP</div>
+          </div>
+          <span class="badge badge-postmvp">Post-MVP</span>
+        </li>
+
+        <li class="phase post-mvp">
+          <span class="phase-num">15</span>
+          <div class="phase-info">
+            <div class="phase-name">GDPR Consent + Erasure</div>
+            <div class="phase-date">Post-MVP</div>
+          </div>
+          <span class="badge badge-postmvp">Post-MVP</span>
+        </li>
+
+      </ul>
+    </div>
+  </details>
 
   <footer>Last updated 2026-05-20 &mdash; ember-health-ai</footer>
 </div>
