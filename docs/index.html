@@ -93,6 +93,24 @@
     .tier-t2 > .tier-summary { color: #c47a2a; background: #fef7f0; }
     .tier-t3 > .tier-summary { color: #868e96; background: #f8f9fa; }
     .tier-body { padding: 0.75rem 1rem 1rem; }
+    .compliance-gate {
+      margin: 0.75rem 0;
+      padding: 0.85rem 1.1rem;
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 10px;
+      border-left: 4px solid #ffc107;
+    }
+    .compliance-gate-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #664d03;
+    }
+    .compliance-gate-desc {
+      font-size: 0.82rem;
+      color: #856404;
+      margin-top: 0.25rem;
+    }
     footer { margin-top: 2.5rem; font-size: 0.8rem; color: #adb5bd; text-align: center; }
   </style>
 </head>
@@ -102,13 +120,13 @@
     <h1>Ember Health AI — Build Progress</h1>
     <p>GBM Companion Chatbot on AWS &mdash; MVP build tracker</p>
     <div class="progress-bar-wrap">
-      <div class="progress-bar-fill" style="width: 71%"></div>
+      <div class="progress-bar-fill" style="width: 67%"></div>
     </div>
-    <div class="progress-label">5 of 7 Prototype phases complete</div>
+    <div class="progress-label">6 of 9 Prototype phases complete</div>
   </header>
 
   <details class="tier-section tier-t1" open>
-    <summary class="tier-summary">Tier 1 &mdash; Prototype &nbsp; [5 of 7 complete]</summary>
+    <summary class="tier-summary">Tier 1 &mdash; Prototype Sandbox &nbsp; [6 of 9 complete]</summary>
     <div class="tier-body">
       <ul class="phase-list">
 
@@ -116,7 +134,7 @@
           <span class="phase-num">Pre</span>
           <div class="phase-info">
             <div class="phase-name">Account &amp; Tool Setup</div>
-            <div class="phase-date">Account + tool setup</div>
+            <div class="phase-date">One-time pre-phase checklist</div>
           </div>
           <span class="badge badge-waiting">Not started</span>
         </li>
@@ -151,7 +169,7 @@
         <li class="phase complete">
           <span class="phase-num">3a</span>
           <div class="phase-info">
-            <div class="phase-name">Chat API</div>
+            <div class="phase-name">Chat API — Streaming Tool Loop</div>
             <div class="phase-date">Completed 2026-05-19</div>
           </div>
           <span class="badge badge-complete">&#10003; Complete</span>
@@ -166,11 +184,29 @@
           <span class="badge badge-complete">&#10003; Complete</span>
         </li>
 
-        <li class="phase not-started">
+        <li class="phase complete">
           <span class="phase-num">5</span>
           <div class="phase-info">
-            <div class="phase-name">Frontend</div>
-            <div class="phase-date">React chat UI, hosted + CI/CD wired</div>
+            <div class="phase-name">Frontend — Prototype Ship</div>
+            <div class="phase-date">Completed 2026-05-20</div>
+          </div>
+          <span class="badge badge-complete">&#10003; Complete</span>
+        </li>
+
+        <li class="phase not-started">
+          <span class="phase-num">3b</span>
+          <div class="phase-info">
+            <div class="phase-name">Ancora Tool — Sandbox</div>
+            <div class="phase-date">Sandbox testing; synthetic data only</div>
+          </div>
+          <span class="badge badge-waiting">Not started</span>
+        </li>
+
+        <li class="phase not-started">
+          <span class="phase-num">6</span>
+          <div class="phase-info">
+            <div class="phase-name">Web Search Tool — Sandbox Preview</div>
+            <div class="phase-date">Vendor evaluation; multi-vendor sandbox</div>
           </div>
           <span class="badge badge-waiting">Not started</span>
         </li>
@@ -179,19 +215,15 @@
     </div>
   </details>
 
+  <div class="compliance-gate">
+    <div class="compliance-gate-title">&#9940; Compliance Hard Stop &mdash; T1&rarr;T2 Gate</div>
+    <div class="compliance-gate-desc">All BAAs, legal docs, and vendor agreements must be in place before Phase 7 starts. No exceptions.</div>
+  </div>
+
   <details class="tier-section tier-t2">
-    <summary class="tier-summary">Tier 2 &mdash; MVP &nbsp; [0 of 5 complete]</summary>
+    <summary class="tier-summary">Tier 2 &mdash; MVP &nbsp; [0 of 3 complete]</summary>
     <div class="tier-body">
       <ul class="phase-list">
-
-        <li class="phase not-started">
-          <span class="phase-num">3b</span>
-          <div class="phase-info">
-            <div class="phase-name">Ancora Tool</div>
-            <div class="phase-date">BAA-gated &mdash; pending partner agreement</div>
-          </div>
-          <span class="badge badge-waiting">Not started</span>
-        </li>
 
         <li class="phase not-started">
           <span class="phase-num">7</span>
@@ -207,15 +239,6 @@
           <div class="phase-info">
             <div class="phase-name">Raw Log Capture</div>
             <div class="phase-date">Full interaction logging pipeline</div>
-          </div>
-          <span class="badge badge-waiting">Not started</span>
-        </li>
-
-        <li class="phase not-started">
-          <span class="phase-num">9</span>
-          <div class="phase-info">
-            <div class="phase-name">Web Search Tool</div>
-            <div class="phase-date">BAA-gated &mdash; pending partner agreement</div>
           </div>
           <span class="badge badge-waiting">Not started</span>
         </li>
@@ -287,7 +310,7 @@
     </div>
   </details>
 
-  <footer>Last updated 2026-05-20 &mdash; ember-health-ai</footer>
+  <footer>Last updated 2026-05-21 &mdash; ember-health-ai</footer>
 </div>
 </body>
 </html>
